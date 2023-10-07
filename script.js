@@ -9,6 +9,13 @@ const showInfo = document.querySelector(".alert")
 
 let computerScoreNum = 0
 let playerScoreNum = 0
+let currentWinner = () =>{
+    if (computerScoreNum > playerScoreNum){
+        return "Computer Win!"
+    }else{
+        return "Hooray you win!"
+    }
+}
 
 function getComputerChoice(){
     let randomChoice = Math.floor(Math.random()*3) + 1
@@ -44,18 +51,31 @@ function gameLogic(user,computer){
     }
 }
 
+function playRound(playercChoice){
+    const computer = getComputerChoice()
+    gameLogic(playercChoice, computer)
+    if (computerScoreNum >=5 || playerScoreNum >= 5){
+        showInfo.textContent = `${currentWinner()}`
+        rock.removeEventListener("click", rockButtonHandler)
+        paper.removeEventListener("click", paperButtonHandler)
+        scissors.removeEventListener("click", scissorsButtonHandler)
+    }
 
-rock.addEventListener("click",() => {
-    const computer = getComputerChoice();
-    gameLogic("Rock", computer)
-})
 
-paper.addEventListener("click",() => {
-    const computer = getComputerChoice();
-    gameLogic("Paper", computer)
-})
+}
 
-scissors.addEventListener("click",() => {
-    const computer = getComputerChoice();
-    gameLogic("Scissors", computer)
-})
+function rockButtonHandler(){
+    playRound("Rock")
+}
+function paperButtonHandler(){
+    playRound("Paper")
+}
+function scissorsButtonHandler(){
+    playRound("Scissors")
+}
+
+
+rock.addEventListener("click", rockButtonHandler)
+paper.addEventListener("click", paperButtonHandler)
+scissors.addEventListener("click", scissorsButtonHandler)
+
