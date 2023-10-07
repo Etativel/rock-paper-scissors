@@ -65,13 +65,13 @@ function playRound(playerChoice){
 }
 
 function rockButtonHandler(){
-    playRound("Rock")
+    playRound("Rock");
 }
 function paperButtonHandler(){
-    playRound("Paper")
+    playRound("Paper");
 }
 function scissorsButtonHandler(){
-    playRound("Scissors")
+    playRound("Scissors");
 }
 
 
