@@ -51,9 +51,9 @@ function gameLogic(user,computer){
     }
 }
 
-function playRound(playercChoice){
+function playRound(playerChoice){
     const computer = getComputerChoice()
-    gameLogic(playercChoice, computer)
+    gameLogic(playerChoice, computer)
     if (computerScoreNum >=5 || playerScoreNum >= 5){
         showInfo.textContent = `${currentWinner()}`
         rock.removeEventListener("click", rockButtonHandler)
