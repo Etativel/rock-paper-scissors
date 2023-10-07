@@ -31,8 +31,8 @@ function getComputerChoice(){
 }
 
 function gameLogic(user,computer){
-    console.log(user)
-    console.log(computer)
+    // console.log(user)
+    // console.log(computer)
     const prop = {
         "Rock" : "Scissors",
         "Paper" : "Rock",
