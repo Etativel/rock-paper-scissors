@@ -60,10 +60,10 @@ body {
 }
 
 .header {
-    /* display: flex;
+    display: flex;
     justify-content: space-between;
     width: 600px;
-    height: 300px; */
+    height: 300px;
 }
 
 .player-ui{
