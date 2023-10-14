@@ -54,7 +54,7 @@ function gameLogic(user,computer){
 function letsPlayAgain(){
     playerScore.textContent  = "You : 0"
     computerScore.textContent = "Comp : 0"
-    showInfo.textContent = "Pick Your Weapon!"
+    showInfo.textContent = "Pick Your Hand!"
     computerScoreNum = 0
     playerScoreNum = 0
     container.removeChild(playAgain)
