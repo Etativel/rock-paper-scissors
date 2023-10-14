@@ -96,7 +96,10 @@ const container = document.querySelector(".container")
 const playAgain = document.createElement('button')
 playAgain.textContent = "Play Again"
 playAgain.classList.add("playAgain-btn")
+<<<<<<< HEAD
 playAgain.classList.add("choice")
+=======
+>>>>>>> 33c9b21c418cdafa36b1ea0781e415a5cf763669
 playAgain.style.display = "inline-block"
 
 playAgain.addEventListener("click", letsPlayAgain)

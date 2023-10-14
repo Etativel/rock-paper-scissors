@@ -17,7 +17,7 @@
 body {
     display: flex;
     justify-content: center;
-    margin-top: 120px;
+    margin-top: 60px    ;
     background-color: black;
 }
 
@@ -104,6 +104,25 @@ body {
 .choice:hover{
 	/* border: 2px solid #45A29E; */
 	color: red;
-    font-weight: 800;
+    font-weight: 700;
+	background: rgba(0,0,0,0);
+}
+
+.playAgain-btn {
+    background-color: #272727;
+    border: solid #66FCF1;
+    color: white;
+    font-weight: 700;
+    font-size: large;
+    display: flex;
+    padding: 20px 130px;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+.playAgain-btn:hover{
+	/* border: 2px solid #45A29E; */
+	color: red;
+    font-weight: 700;
 	background: rgba(0,0,0,0);
 }
