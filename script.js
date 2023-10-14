@@ -51,31 +51,32 @@ function gameLogic(user,computer){
     }
 }
 
-function playRound(playerChoice){
+function playRound(playerChoice){ //This function will remove eventListener so the game stopped
     const computer = getComputerChoice()
     gameLogic(playerChoice, computer)
     if (computerScoreNum >=5 || playerScoreNum >= 5){
-        showInfo.textContent = `${currentWinner()}`
-        rock.removeEventListener("click", rockButtonHandler)
-        paper.removeEventListener("click", paperButtonHandler)
-        scissors.removeEventListener("click", scissorsButtonHandler)
+        playerEvent.removeEventListener("click", playerEventHandler)
     }
-
-
-}
-
-function rockButtonHandler(){
-    playRound("Rock");
-}
-function paperButtonHandler(){
-    playRound("Paper");
-}
-function scissorsButtonHandler(){
-    playRound("Scissors");
 }
 
 
-rock.addEventListener("click", rockButtonHandler)
-paper.addEventListener("click", paperButtonHandler)
-scissors.addEventListener("click", scissorsButtonHandler)
+function playerEventHandler(ev){
+    let target = ev.target
 
+    switch (target.id){
+        case "rock":
+            console.log("Rock clicked")
+            playRound("Rock");
+            break;
+        case "scissors":
+            playRound("Scissors");
+            break;
+        case "paper":
+            playRound("Paper");
+            break;
+    }
+}
+
+const playerEvent = document.querySelector(".player-ui")
+
+playerEvent.addEventListener("click", playerEventHandler)
