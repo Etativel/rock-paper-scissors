@@ -53,16 +53,15 @@ function gameLogic(user,computer){
 
 function playRound(playerChoice){ //This function will remove eventListener so the game stopped
     const computer = getComputerChoice()
-    gameLogic(playerChoice, computer)
+    gameLogic(playerChoice, computer);
     if (computerScoreNum >=5 || playerScoreNum >= 5){
-        playerEvent.removeEventListener("click", playerEventHandler)
+        playerEvent.removeEventListener("click", playerEventHandler);
     }
 }
 
 
 function playerEventHandler(ev){
     let target = ev.target
-
     switch (target.id){
         case "rock":
             console.log("Rock clicked")
@@ -77,6 +76,6 @@ function playerEventHandler(ev){
     }
 }
 
-const playerEvent = document.querySelector(".player-ui")
+const playerEvent = document.querySelector(".player-ui");
 
-playerEvent.addEventListener("click", playerEventHandler)
+playerEvent.addEventListener("click", playerEventHandler);
