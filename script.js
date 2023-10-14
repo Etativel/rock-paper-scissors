@@ -51,11 +51,23 @@ function gameLogic(user,computer){
     }
 }
 
+function letsPlayAgain(){
+    playerScore.textContent  = "You : 0"
+    computerScore.textContent = "Comp : 0"
+    showInfo.textContent = "Pick Your Weapon!"
+    computerScoreNum = 0
+    playerScoreNum = 0
+    container.removeChild(playAgain)
+    playerEvent.addEventListener("click", playerEventHandler);
+}
+
 function playRound(playerChoice){ //This function will remove eventListener so the game stopped
     const computer = getComputerChoice()
     gameLogic(playerChoice, computer);
     if (computerScoreNum >=5 || playerScoreNum >= 5){
+        showInfo.textContent = `${currentWinner()}`
         playerEvent.removeEventListener("click", playerEventHandler);
+        container.appendChild(playAgain)
     }
 }
 
@@ -77,5 +89,13 @@ function playerEventHandler(ev){
 }
 
 const playerEvent = document.querySelector(".player-ui");
-
 playerEvent.addEventListener("click", playerEventHandler);
+
+// Create Play Again button
+const container = document.querySelector(".container")
+const playAgain = document.createElement('button')
+playAgain.textContent = "Play Again"
+playAgain.classList.add("playAgain-btn")
+playAgain.style.display = "inline-block"
+
+playAgain.addEventListener("click", letsPlayAgain)
